@@ -21,7 +21,14 @@ $posicao_usuario = $gamificacao->obterPosicaoUsuario($_SESSION["usuario_id"]);
 // Calcular estatísticas com valores padrão seguros
 $total_questoes = isset($dados_usuario['questoes_respondidas']) ? (int)$dados_usuario['questoes_respondidas'] : 0;
 $questoes_corretas = isset($dados_usuario['questoes_corretas']) ? (int)$dados_usuario['questoes_corretas'] : 0;
-$percentual_acerto = $total_questoes > 0 ? round(($questoes_corretas / $total_questoes) * 100, 1) : 0;
+$percentual_acerto = 0;
+if ($total_questoes > 0) {
+    $percentual_acerto = round(($questoes_corretas / $total_questoes) * 100, 1);
+    // Garantir que não passe de 100%
+    if ($percentual_acerto > 100) {
+        $percentual_acerto = 100;
+    }
+}
 
 // Garantir que os dados do usuário tenham valores padrão
 $nome_usuario = isset($dados_usuario['nome']) ? $dados_usuario['nome'] : 'Usuário';

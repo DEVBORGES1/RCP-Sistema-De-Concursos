@@ -1,8 +1,4 @@
-- SIDEBAR EM TODAS AS PAGINAS
 - METAS NÃO ATRIBUIDAS
-- OS SIMULADOS PréDEFINIDOS não estão sendo possivel acessar está apenas atualizando a pagina quando clico pra entrar nele, 
-- corrigir perguntas e respostas dos simulados pois estão duplicadas, estão com erros 
-- colocar novas perguntas
 - vinculo da pontuação do usuario e das conquistas estão dando problema e o ranking geral não está aparecendo.
 - Quando terminar uma aula, próxima "aula" é um simulado de 10 questões
 - Durante o evento de conclusão da aula:

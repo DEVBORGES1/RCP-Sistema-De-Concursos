@@ -24,7 +24,7 @@ class Database {
         $this->host = "localhost";
         $this->db = "concursos";
         $this->user = "root";
-        $this->pass = "";
+        $this->pass = "1234";
         
         try {
             $this->pdo = new PDO(

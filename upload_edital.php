@@ -1,7 +1,7 @@
 <?php
 session_start();
-require 'conexao.php';
-require 'classes/AnalisadorEdital.php';
+require __DIR__ . '/config/conexao.php';
+require __DIR__ . '/app/Classes/AnalisadorEdital.php';
 
 if (!isset($_SESSION["usuario_id"])) {
     header("Location: login.php");
@@ -12,7 +12,7 @@ $mensagem = "";
 $tipo_mensagem = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["edital"])) {
-    $targetDir = "uploads/";
+    $targetDir = __DIR__ . "/storage/uploads/";
     
     // Criar diretório se não existir
     if (!file_exists($targetDir)) {
@@ -120,7 +120,7 @@ function gerarTextoSimuladoEdital() {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload de Edital - Sistema de Concursos</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>

@@ -60,14 +60,15 @@ class GeradorCertificado {
         
         // Salvar arquivo
         $filename = "certificado_" . $usuario_id . "_" . $categoria_id . "_" . date('Y-m-d_His') . ".html";
-        $filepath = "uploads/" . $filename;
+        $filepath = __DIR__ . "/../../storage/uploads/" . $filename;
         
         file_put_contents($filepath, $html);
         
         return [
             'sucesso' => true,
             'arquivo' => $filename,
-            'caminho' => $filepath
+            'caminho' => $filepath,
+            'url' => '/storage/uploads/' . $filename
         ];
     }
     

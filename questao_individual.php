@@ -1,7 +1,7 @@
 <?php
 session_start();
-require 'conexao.php';
-require 'classes/Gamificacao.php';
+require __DIR__ . '/config/conexao.php';
+require __DIR__ . '/app/Classes/Gamificacao.php';
 
 if (!isset($_SESSION["usuario_id"])) {
     header("Location: login.php");

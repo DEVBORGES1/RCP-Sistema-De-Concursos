@@ -1,6 +1,6 @@
 <?php
-require_once 'conexao.php';
-require_once 'GeradorCronograma.php';
+require_once __DIR__ . '/../../config/conexao.php';
+require_once __DIR__ . '/GeradorCronograma.php';
 
 class GeradorPDFCronograma {
     private $pdo;
@@ -38,14 +38,15 @@ class GeradorPDFCronograma {
         
         // Salvar arquivo temporário
         $filename = "cronograma_" . $cronograma_id . "_" . date('Y-m-d_H-i-s') . ".html";
-        $filepath = "uploads/" . $filename;
+        $filepath = __DIR__ . "/../../storage/uploads/" . $filename;
         
         file_put_contents($filepath, $html);
         
         return [
             'sucesso' => true,
             'arquivo' => $filename,
-            'caminho' => $filepath
+            'caminho' => $filepath,
+            'url' => '/storage/uploads/' . $filename
         ];
     }
     

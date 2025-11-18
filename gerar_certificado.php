@@ -1,8 +1,8 @@
 <?php
 session_start();
-require 'conexao.php';
-require_once 'classes/GeradorCertificado.php';
-require_once 'classes/GamificacaoRefatorada.php';
+require __DIR__ . '/config/conexao.php';
+require_once __DIR__ . '/app/Classes/GeradorCertificado.php';
+require_once __DIR__ . '/app/Classes/GamificacaoRefatorada.php';
 
 if (!isset($_SESSION["usuario_id"])) {
     header("Location: login.php");

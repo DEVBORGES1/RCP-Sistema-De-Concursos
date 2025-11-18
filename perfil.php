@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once 'classes/Database.php';
-require_once 'classes/GamificacaoRefatorada.php';
+require_once __DIR__ . '/app/Classes/Database.php';
+require_once __DIR__ . '/app/Classes/GamificacaoRefatorada.php';
 
 if (!isset($_SESSION["usuario_id"])) {
     header("Location: login.php");
@@ -63,9 +63,9 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil - Sistema de Concursos</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="icon" href="/css/concurso.ico" type="image/png">
+    <link rel="icon" href="/assets/css/concurso.ico" type="image/png">
 </head>
 <body>
     <div class="container">

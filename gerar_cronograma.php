@@ -1,8 +1,8 @@
 <?php
 session_start();
-require 'conexao.php';
-require 'classes/GeradorCronograma.php';
-require 'classes/GeradorPDFCronograma.php';
+require __DIR__ . '/config/conexao.php';
+require __DIR__ . '/app/Classes/GeradorCronograma.php';
+require __DIR__ . '/app/Classes/GeradorPDFCronograma.php';
 
 if (!isset($_SESSION["usuario_id"])) {
     header("Location: login.php");
@@ -96,7 +96,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerar Cronograma - Sistema de Concursos</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>

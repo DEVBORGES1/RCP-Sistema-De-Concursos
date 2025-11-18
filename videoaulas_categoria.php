@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'conexao.php';
+require __DIR__ . '/config/conexao.php';
 
 if (!isset($_SESSION["usuario_id"])) {
     header("Location: login.php");
@@ -82,7 +82,7 @@ if ($_POST['action'] ?? '' === 'update_progress') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= htmlspecialchars($categoria['nome']) ?> - Videoaulas</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         .categoria-container {

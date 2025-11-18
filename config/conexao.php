@@ -8,7 +8,7 @@
  * @deprecated Use classes/Database.php
  */
 
-require_once __DIR__ . '/classes/Database.php';
+require_once __DIR__ . '/../app/Classes/Database.php';
 
 // Manter compatibilidade
 $pdo = Database::getInstance()->getConnection();

@@ -19,6 +19,7 @@ if (isset($_SESSION["usuario_id"])) {
 </head>
 
 <body class="homepage">
+    <div id="particles-js"></div>
     <div class="container">
         <!-- Navigation -->
         <nav class="main-nav">
@@ -31,91 +32,52 @@ if (isset($_SESSION["usuario_id"])) {
                 <a href="register.php" class="nav-btn">Cadastrar</a>
             </div>
         </nav>
+    </div>
 
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <i class="fas fa-star"></i>
-                    <span>Plataforma #1 em Gamificação de Estudos</span>
-                </div>
-                <h1>Transforme seus estudos em uma <span class="gradient-text">jornada épica</span></h1>
-                <p class="hero-subtitle">
-                    A única plataforma que combina inteligência artificial, gamificação e
-                    análise de dados para maximizar seu desempenho em concursos públicos.
-                </p>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="number">95%</span>
-                        <span class="label">Taxa de Aprovação</span>
-                    </div>
-                    <div class="stat">
-                        <span class="number">50k+</span>
-                        <span class="label">Questões</span>
-                    </div>
-                    <div class="stat">
-                        <span class="number">10k+</span>
-                        <span class="label">Usuários</span>
-                    </div>
-                </div>
-
-                <div class="hero-actions">
-                    <a href="register.php" class="btn-primary btn-large">
-                        <i class="fas fa-rocket"></i> Começar Jornada
-                        <span class="btn-glow"></span>
-                    </a>
-                    <a href="login.php" class="btn-secondary btn-large">
-                        <i class="fas fa-sign-in-alt"></i> Já tenho conta
-                    </a>
-                </div>
-
-                <div class="hero-trust">
-                    <p>Confiança de milhares de candidatos</p>
-                    <div class="trust-badges">
-                        <div class="badge">
-                            <i class="fas fa-shield-alt"></i>
-                            <span>100% Seguro</span>
-                        </div>
-                        <div class="badge">
-                            <i class="fas fa-clock"></i>
-                            <span>24/7 Disponível</span>
-                        </div>
-                        <div class="badge">
-                            <i class="fas fa-mobile-alt"></i>
-                            <span>Mobile First</span>
-                        </div>
-                    </div>
-                </div>
+    <!-- Hero Section (Full Width) -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content centered-content">
+            <div class="hero-badge">
+                <i class="fas fa-star"></i>
+                <span>Plataforma #1 em Gamificação de Estudos</span>
+            </div>
+            <h1>Transforme seus estudos em uma <span class="gradient-text">jornada épica</span></h1>
+            <p class="hero-subtitle">
+                A única plataforma que combina inteligência artificial, gamificação e
+                análise de dados para maximizar seu desempenho em concursos públicos.
+            </p>
+            
+            <div class="hero-actions">
+                <a href="register.php" class="btn-primary btn-large">
+                    <i class="fas fa-rocket"></i> Começar Jornada
+                    <span class="btn-glow"></span>
+                </a>
+                <a href="login.php" class="btn-secondary btn-large">
+                    <i class="fas fa-sign-in-alt"></i> Já tenho conta
+                </a>
             </div>
 
-            <div class="hero-visual">
-                <div class="floating-cards">
-                    <div class="card card-1">
-                        <i class="fas fa-trophy"></i>
-                        <h4>Gamificação</h4>
-                        <p>Pontos, níveis e conquistas</p>
-                    </div>
-                    <div class="card card-2">
-                        <i class="fas fa-brain"></i>
-                        <h4>IA Inteligente</h4>
-                        <p>Cronogramas personalizados</p>
-                    </div>
-                    <div class="card card-3">
-                        <i class="fas fa-chart-line"></i>
-                        <h4>Progresso</h4>
-                        <p>Acompanhe sua evolução</p>
-                    </div>
-                    <div class="card card-4">
-                        <i class="fas fa-users"></i>
-                        <h4>Ranking</h4>
-                        <p>Compita com outros</p>
-                    </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="number">95%</span>
+                    <span class="label">Taxa de Aprovação</span>
+                </div>
+                <div class="stat">
+                    <span class="number">50k+</span>
+                    <span class="label">Questões</span>
+                </div>
+                <div class="stat">
+                    <span class="number">10k+</span>
+                    <span class="label">Usuários</span>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
+    <div class="container">
         <!-- How it Works Section -->
-        <section class="how-it-works">
+        <section class="how-it-works reveal">
             <div class="section-header">
                 <h2>Como funciona nossa plataforma?</h2>
                 <p>Três passos simples para transformar seus estudos</p>
@@ -149,7 +111,7 @@ if (isset($_SESSION["usuario_id"])) {
         </section>
 
         <!-- Features Section -->
-        <section class="features-section">
+        <section class="features-section reveal">
             <div class="section-header">
                 <h2>Por que escolher nossa plataforma?</h2>
                 <p>Recursos que fazem a diferença na sua preparação</p>
@@ -207,7 +169,7 @@ if (isset($_SESSION["usuario_id"])) {
         </section>
 
         <!-- Testimonials Section -->
-        <section class="testimonials-section">
+        <section class="testimonials-section reveal">
             <div class="section-header">
                 <h2>O que nossos usuários dizem</h2>
                 <p>Histórias reais de quem já conquistou a vaga</p>
@@ -282,7 +244,7 @@ if (isset($_SESSION["usuario_id"])) {
         </section>
 
         <!-- Stats Section -->
-        <section class="stats-section">
+        <section class="stats-section reveal">
             <div class="stats-container">
                 <div class="stat-item">
                     <div class="stat-icon">
@@ -316,7 +278,7 @@ if (isset($_SESSION["usuario_id"])) {
         </section>
 
         <!-- CTA Section -->
-        <section class="cta-section">
+        <section class="cta-section reveal">
             <div class="cta-content">
                 <h2>Pronto para transformar seus estudos?</h2>
                 <p>Junte-se a milhares de candidatos que já descobriram uma forma mais eficiente e divertida de estudar para concursos.</p>
@@ -326,6 +288,53 @@ if (isset($_SESSION["usuario_id"])) {
             </div>
         </section>
     </div>
+
+    <!-- Footer -->
+    <footer class="main-footer reveal">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="nav-brand">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>RCP Concursos</span>
+                </div>
+                <p>Sua jornada rumo à aprovação começa aqui. Tecnologia e gamificação unidas para o seu sucesso.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Plataforma</h3>
+                <a href="#">Início</a>
+                <a href="#">Recursos</a>
+                <a href="#">Planos</a>
+                <a href="#">Blog</a>
+            </div>
+
+            <div class="footer-links">
+                <h3>Suporte</h3>
+                <a href="#">FAQ</a>
+                <a href="#">Contato</a>
+                <a href="#">Termos de Uso</a>
+                <a href="#">Privacidade</a>
+            </div>
+
+            <div class="footer-newsletter">
+                <h3>Novidades</h3>
+                <p>Inscreva-se para receber dicas de estudo e ofertas.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Seu e-mail">
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 RCP Sistema de Concursos. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 
     <style>
         /* Homepage specific styles */
@@ -392,34 +401,69 @@ if (isset($_SESSION["usuario_id"])) {
 
         /* Hero Section */
         .hero-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
+            display: flex;
             align-items: center;
-            margin-bottom: 120px;
+            justify-content: center;
+            min-height: 85vh;
             padding: 80px 0;
+            background-image: url('assets/imagens/hero-cover.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            margin-bottom: 80px;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.6) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-content.centered-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .hero-badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(255, 68, 68, 0.1);
-            border: 1px solid rgba(255, 68, 68, 0.3);
+            background: rgba(255, 68, 68, 0.15);
+            border: 1px solid rgba(255, 68, 68, 0.5);
             color: #ff4444;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 1rem;
             font-weight: 600;
             margin-bottom: 30px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 0 20px rgba(255, 68, 68, 0.2);
+            animation: fadeInDown 1s ease-out;
         }
 
         .hero-content h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             color: white;
             margin-bottom: 30px;
             font-weight: 800;
             line-height: 1.1;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease-out 0.2s backwards;
         }
 
         .gradient-text {
@@ -427,20 +471,30 @@ if (isset($_SESSION["usuario_id"])) {
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-shadow: none;
         }
 
         .hero-subtitle {
-            font-size: 1.3rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 40px;
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 50px;
             font-weight: 400;
             line-height: 1.6;
+            max-width: 800px;
+            text-shadow: 0 1px 5px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease-out 0.4s backwards;
         }
 
         .hero-stats {
             display: flex;
-            gap: 40px;
-            margin-bottom: 50px;
+            gap: 60px;
+            margin-top: 60px;
+            animation: fadeInUp 1s ease-out 0.8s backwards;
+            background: rgba(0,0,0,0.5);
+            padding: 20px 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
         }
 
         .stat {
@@ -449,34 +503,41 @@ if (isset($_SESSION["usuario_id"])) {
 
         .stat .number {
             display: block;
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 800;
             color: #ff4444;
             margin-bottom: 5px;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.5);
         }
 
         .stat .label {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.7);
-            font-weight: 500;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .hero-actions {
             display: flex;
-            gap: 20px;
+            gap: 25px;
             flex-wrap: wrap;
+            justify-content: center;
+            animation: fadeInUp 1s ease-out 0.6s backwards;
         }
 
         .btn-large {
-            padding: 18px 35px;
-            font-size: 1.1rem;
+            padding: 20px 40px;
+            font-size: 1.2rem;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            border-radius: 12px;
-            font-weight: 600;
+            gap: 12px;
+            border-radius: 15px;
+            font-weight: 700;
             transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .btn-primary {
@@ -484,11 +545,13 @@ if (isset($_SESSION["usuario_id"])) {
             color: white;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 10px 25px rgba(255, 68, 68, 0.4);
+            border: none;
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(255, 68, 68, 0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(255, 68, 68, 0.6);
         }
 
         .btn-glow {
@@ -497,7 +560,7 @@ if (isset($_SESSION["usuario_id"])) {
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
             transition: left 0.5s;
         }
 
@@ -508,133 +571,52 @@ if (isset($_SESSION["usuario_id"])) {
         .btn-secondary {
             background: rgba(255, 255, 255, 0.1);
             color: white;
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.4);
             backdrop-filter: blur(10px);
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: rgba(255, 255, 255, 0.5);
-            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.25);
+            border-color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
         }
-
-        .hero-trust {
-            margin-top: 60px;
-        }
-
-        .hero-trust p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .trust-badges {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .badge {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 8px 16px;
-            border-radius: 20px;
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-
-        .badge i {
-            color: #ff4444;
-        }
-
-        .hero-visual {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 500px;
-        }
-
-        .floating-cards {
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
-
-        .card {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 25px;
-            border-radius: 20px;
-            text-align: center;
-            color: white;
-            transition: all 0.3s ease;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .card:hover {
-            transform: translateY(-10px) scale(1.05);
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        .card-1 {
-            top: 0;
-            left: 0;
-            animation-delay: 0s;
-        }
-
-        .card-2 {
-            top: 0;
-            right: 0;
-            animation-delay: 1.5s;
-        }
-
-        .card-3 {
-            bottom: 0;
-            left: 0;
-            animation-delay: 3s;
-        }
-
-        .card-4 {
-            bottom: 0;
-            right: 0;
-            animation-delay: 4.5s;
-        }
-
-        .card i {
-            font-size: 2.5rem;
-            color: #ff4444;
-            margin-bottom: 15px;
-        }
-
-        .card h4 {
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        .card p {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0px);
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
             }
-
-            50% {
-                transform: translateY(-20px);
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float-badge {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* Section Headers */
@@ -948,14 +930,12 @@ if (isset($_SESSION["usuario_id"])) {
 
         @media (max-width: 768px) {
             .hero-section {
-                grid-template-columns: 1fr;
-                gap: 50px;
-                text-align: center;
-                padding: 40px 0;
+                padding: 60px 0;
+                min-height: 70vh;
             }
 
             .hero-content h1 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
 
             .hero-subtitle {
@@ -963,34 +943,13 @@ if (isset($_SESSION["usuario_id"])) {
             }
 
             .hero-stats {
-                justify-content: center;
                 gap: 30px;
+                padding: 15px 30px;
             }
 
             .steps-container {
                 grid-template-columns: 1fr;
                 gap: 30px;
-            }
-
-            .floating-cards {
-                height: 300px;
-            }
-
-            .card {
-                position: relative;
-                margin-bottom: 20px;
-                animation: none;
-            }
-
-            .card-1,
-            .card-2,
-            .card-3,
-            .card-4 {
-                position: relative;
-                top: auto;
-                left: auto;
-                right: auto;
-                bottom: auto;
             }
 
             .features-grid {
@@ -1047,7 +1006,223 @@ if (isset($_SESSION["usuario_id"])) {
                 gap: 10px;
             }
         }
+        /* Particles */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Stats Animation Class */
+        .stats-section.reveal .stat-number,
+        .hero-section .stat .number {
+            transition: color 0.3s ease;
+        }
+
+        /* Footer Styles */
+        .main-footer {
+            background: linear-gradient(to bottom, #000000 0%, #4d0000 100%);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 68, 68, 0.2);
+            color: white;
+            padding: 60px 0 20px;
+            margin-top: 80px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            padding: 0 20px;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.6);
+            margin: 20px 0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: #ff4444;
+            transform: translateY(-3px);
+        }
+
+        .footer-links h3, .footer-newsletter h3 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: white;
+            font-weight: 600;
+        }
+
+        .footer-links a {
+            display: block;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #ff4444;
+            padding-left: 5px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .newsletter-form button {
+            background: #ff4444;
+            border: none;
+            color: white;
+            padding: 0 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            background: #cc0000;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 30px;
+            }
+            .social-links {
+                justify-content: center;
+            }
+            .newsletter-form {
+                flex-direction: column;
+            }
+            .footer-links a:hover {
+                padding-left: 0;
+                color: #ff4444;
+            }
+        }
     </style>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        /* Particles Init */
+        if(typeof particlesJS !== 'undefined') {
+            particlesJS("particles-js", {
+                "particles": {
+                    "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                    "color": { "value": "#ff4444" },
+                    "shape": { "type": "circle" },
+                    "opacity": { "value": 0.2, "random": true },
+                    "size": { "value": 3, "random": true },
+                    "line_linked": { "enable": true, "distance": 150, "color": "#ff4444", "opacity": 0.1, "width": 1 },
+                    "move": { "enable": true, "speed": 1, "direction": "none", "random": true, "out_mode": "out" }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } },
+                    "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 0.5 } } }
+                },
+                "retina_detect": true
+            });
+        }
+
+        /* Scroll Animation (Reveal) */
+        window.addEventListener('scroll', reveal);
+        function reveal(){
+            var reveals = document.querySelectorAll('.reveal');
+            for(var i = 0; i < reveals.length; i++){
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if(elementTop < windowHeight - elementVisible){
+                    reveals[i].classList.add('active');
+                    
+                    // Trigger CountUp if it's the stats section
+                    if(reveals[i].classList.contains('stats-section') && !reveals[i].classList.contains('counted')){
+                        startCountAnimation();
+                        reveals[i].classList.add('counted');
+                    }
+                }
+            }
+        }
+        
+        function startCountAnimation() {
+            const stats = document.querySelectorAll('.stat-number, .stat .number');
+            stats.forEach(stat => {
+                const targetText = stat.innerText;
+                const hasSuffix = targetText.includes('k') || targetText.includes('%') || targetText.includes('+');
+                const suffix = targetText.replace(/[0-9.]/g, '');
+                const target = parseFloat(targetText.replace(/[^0-9.]/g, ''));
+                
+                if(isNaN(target)) return;
+
+                let count = 0;
+                const duration = 2000; // 2s
+                const increment = target / (duration / 16); // 60fps
+
+                const timer = setInterval(() => {
+                    count += increment;
+                    if (count >= target) {
+                        count = target;
+                        clearInterval(timer);
+                    }
+                    // Format number: if it was an integer, show int, else fixed
+                    let display = Number.isInteger(target) ? Math.round(count) : count.toFixed(1);
+                    stat.innerText = display + suffix;
+                }, 16);
+            });
+        }
+
+        // Trigger once to check initial view
+        reveal();
+    </script>
 </body>
 
 </html>

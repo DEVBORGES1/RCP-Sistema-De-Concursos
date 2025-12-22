@@ -42,5 +42,7 @@ package-lock.json
 # Environment
 .env
 .env.local
+config/database_config.php
+
 
 

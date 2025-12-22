@@ -99,6 +99,8 @@ $sql = "SELECT COUNT(*) as respondidas FROM respostas_usuario r
 $stmt = $pdo->prepare($sql);
 $stmt->execute([$_SESSION["usuario_id"], $_SESSION["usuario_id"]]);
 $questoes_respondidas = $stmt->fetchColumn();
+
+$active_page = 'questoes.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -108,261 +110,186 @@ $questoes_respondidas = $stmt->fetchColumn();
     <title>Banco de Questões - Sistema de Concursos</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="/assets/css/concurso.ico" type="image/png">
 </head>
 <body>
-    <!-- Sidebar -->
-    <nav class="sidebar" id="sidebar">
-        <div class="sidebar-header">
-            <h2><i class="fas fa-graduation-cap"></i> RCP Concursos</h2>
-            <p>Sistema de Estudos</p>
-        </div>
-        <div class="sidebar-nav">
-            <div class="nav-section">
-                <div class="nav-section-title">Navegação</div>
-                <a href="dashboard.php" class="nav-item">
-                    <i class="fas fa-home"></i>
-                    <span>Dashboard</span>
-                </a>
-                <a href="perfil.php" class="nav-item">
-                    <i class="fas fa-user"></i>
-                    <span>Meu Perfil</span>
-                </a>
-                <a href="simulados.php" class="nav-item">
-                    <i class="fas fa-clipboard-list"></i>
-                    <span>Simulados</span>
-                </a>
-            </div>
-            
-            <div class="nav-section">
-                <div class="nav-section-title">Estudos</div>
-                <a href="questoes.php" class="nav-item active">
-                    <i class="fas fa-question-circle"></i>
-                    <span>Banco de Questões</span>
-                </a>
-                <a href="videoaulas.php" class="nav-item">
-                    <i class="fas fa-play-circle"></i>
-                    <span>Videoaulas</span>
-                </a>
-                <a href="editais.php" class="nav-item">
-                    <i class="fas fa-file-alt"></i>
-                    <span>Meus Editais</span>
-                </a>
-            </div>
-            
-            <div class="nav-section">
-                <div class="nav-section-title">Ferramentas</div>
-                <a href="upload_edital.php" class="nav-item">
-                    <i class="fas fa-upload"></i>
-                    <span>Upload Edital</span>
-                </a>
-                <a href="gerar_cronograma.php" class="nav-item">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>Gerar Cronograma</span>
-                </a>
-                <a href="dashboard_avancado.php" class="nav-item">
-                    <i class="fas fa-tachometer-alt"></i>
-                    <span>Dashboard Avançado</span>
-                </a>
-            </div>
-            
-            <div class="nav-section">
-                <div class="nav-section-title">Conta</div>
-                <a href="logout.php" class="nav-item">
-                    <i class="fas fa-sign-out-alt"></i>
-                    <span>Sair</span>
-                </a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Mobile Sidebar Toggle -->
-    <button class="sidebar-toggle" id="sidebarToggle">
-        <i class="fas fa-bars"></i>
-    </button>
+    
+    <?php include 'includes/sidebar.php'; ?>
 
     <div class="content-with-sidebar">
         <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <div class="header-content">
-                <h1><i class="fas fa-question-circle"></i> Banco de Questões</h1>
-                <div class="user-info">
-                    <a href="dashboard.php" class="action-btn">
-                        <i class="fas fa-arrow-left"></i>
-                        <span>Voltar</span>
-                    </a>
-                </div>
-            </div>
-        </header>
+            <!-- Header -->
+            <?php include 'includes/header.php'; ?>
 
-        <?php if ($mensagem): ?>
-            <div class="alert alert-info">
-                <i class="fas fa-info-circle"></i>
-                <?= $mensagem ?>
-            </div>
-        <?php endif; ?>
+            <?php if ($mensagem): ?>
+                <div class="alert alert-info">
+                    <i class="fas fa-info-circle"></i>
+                    <?= $mensagem ?>
+                </div>
+            <?php endif; ?>
 
-        <!-- Estatísticas -->
-        <section class="stats-section">
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class="fas fa-database"></i>
+            <!-- Estatísticas -->
+            <section class="stats-section">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3><?= $total_questoes ?></h3>
+                            <p>Total de Questões</p>
+                        </div>
                     </div>
-                    <div class="stat-content">
-                        <h3><?= $total_questoes ?></h3>
-                        <p>Total de Questões</p>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3><?= $questoes_respondidas ?></h3>
+                            <p>Questões Respondidas</p>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <div class="stat-content">
-                        <h3><?= $questoes_respondidas ?></h3>
-                        <p>Questões Respondidas</p>
-                    </div>
-                </div>
-                
-                <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class="fas fa-percentage"></i>
-                    </div>
-                    <div class="stat-content">
-                        <h3><?= $total_questoes > 0 ? round(($questoes_respondidas / $total_questoes) * 100, 1) : 0 ?>%</h3>
-                        <p>Progresso</p>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-percentage"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3><?= $total_questoes > 0 ? round(($questoes_respondidas / $total_questoes) * 100, 1) : 0 ?>%</h3>
+                            <p>Progresso</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Adicionar Questão -->
-        <section class="add-questao-section">
-            <div class="card">
-                <h2><i class="fas fa-plus-circle"></i> Adicionar Nova Questão</h2>
-<form method="POST">
-                    <input type="hidden" name="adicionar_questao" value="1">
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="edital_id">Edital:</label>
-                            <select id="edital_id" name="edital_id" required>
-                                <option value="">Selecione um edital</option>
-                                <?php foreach ($editais as $edital): ?>
-                                    <option value="<?= $edital['id'] ?>">
-                                        <?= htmlspecialchars($edital['nome_arquivo']) ?>
-                                    </option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
+            <!-- Adicionar Questão -->
+            <section class="add-questao-section">
+                <div class="card">
+                    <h2><i class="fas fa-plus-circle"></i> Adicionar Nova Questão</h2>
+                    <form method="POST">
+                        <input type="hidden" name="adicionar_questao" value="1">
                         
-                        <div class="form-group">
-                            <label for="disciplina_id">Disciplina (opcional):</label>
-                            <select id="disciplina_id" name="disciplina_id">
-                                <option value="">Selecione uma disciplina</option>
-                                <?php foreach ($disciplinas as $disciplina): ?>
-                                    <option value="<?= $disciplina['id'] ?>">
-                                        <?= htmlspecialchars($disciplina['nome_disciplina']) ?>
-                                    </option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="enunciado">Enunciado:</label>
-                        <textarea id="enunciado" name="enunciado" rows="4" required></textarea>
-                    </div>
-                    
-                    <div class="alternativas-grid">
-                        <div class="form-group">
-                            <label for="a">A)</label>
-                            <input type="text" id="a" name="a" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="b">B)</label>
-                            <input type="text" id="b" name="b" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="c">C)</label>
-                            <input type="text" id="c" name="c" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="d">D)</label>
-                            <input type="text" id="d" name="d" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="e">E)</label>
-                            <input type="text" id="e" name="e" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="correta">Resposta Correta:</label>
-                        <select id="correta" name="correta" required>
-                            <option value="">Selecione</option>
-                            <option value="A">A</option>
-                            <option value="B">B</option>
-                            <option value="C">C</option>
-                            <option value="D">D</option>
-                            <option value="E">E</option>
-                        </select>
-                    </div>
-                    
-                    <button type="submit" class="btn-primary">
-                        <i class="fas fa-plus"></i> Adicionar Questão
-                    </button>
-                </form>
-            </div>
-        </section>
-
-        <!-- Prática de Questões -->
-        <section class="pratica-section">
-            <div class="card">
-                <h2><i class="fas fa-play-circle"></i> Prática de Questões</h2>
-                
-                <?php if (empty($questoes_pratica)): ?>
-                    <div class="empty-state">
-                        <i class="fas fa-question-circle"></i>
-                        <h3>Nenhuma questão disponível</h3>
-                        <p>Adicione questões primeiro para começar a praticar!</p>
-                    </div>
-                <?php else: ?>
-                    <div class="questoes-grid">
-                        <?php foreach ($questoes_pratica as $questao): ?>
-                            <div class="questao-card">
-                                <div class="questao-header">
-                                    <h3>Questão #<?= $questao['id'] ?></h3>
-                                    <div class="questao-meta">
-                                        <?php if ($questao['nome_disciplina']): ?>
-                                            <span class="disciplina-tag"><?= htmlspecialchars($questao['nome_disciplina']) ?></span>
-                                        <?php endif; ?>
-                                        <?php if ($questao['ja_respondida']): ?>
-                                            <span class="respondida-tag">Respondida</span>
-                                        <?php endif; ?>
-                                    </div>
-                                </div>
-                                
-                                <div class="questao-content">
-                                    <p class="enunciado"><?= nl2br(htmlspecialchars(substr($questao['enunciado'], 0, 150))) ?>...</p>
-                                    
-                                    <div class="questao-actions">
-                                        <button class="btn-primary btn-small" onclick="abrirQuestao(<?= $questao['id'] ?>)">
-                                            <i class="fas fa-eye"></i> Ver Questão
-                                        </button>
-                                    </div>
-                                </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="edital_id">Edital:</label>
+                                <select id="edital_id" name="edital_id" required class="form-control">
+                                    <option value="">Selecione um edital</option>
+                                    <?php foreach ($editais as $edital): ?>
+                                        <option value="<?= $edital['id'] ?>">
+                                            <?= htmlspecialchars($edital['nome_arquivo']) ?>
+                                        </option>
+                                    <?php endforeach; ?>
+                                </select>
                             </div>
-                        <?php endforeach; ?>
-                    </div>
-                <?php endif; ?>
-            </div>
-        </section>
+                            
+                            <div class="form-group">
+                                <label for="disciplina_id">Disciplina (opcional):</label>
+                                <select id="disciplina_id" name="disciplina_id" class="form-control">
+                                    <option value="">Selecione uma disciplina</option>
+                                    <?php foreach ($disciplinas as $disciplina): ?>
+                                        <option value="<?= $disciplina['id'] ?>">
+                                            <?= htmlspecialchars($disciplina['nome_disciplina']) ?>
+                                        </option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="enunciado">Enunciado:</label>
+                            <textarea id="enunciado" name="enunciado" rows="4" required class="form-control"></textarea>
+                        </div>
+                        
+                        <div class="alternativas-grid">
+                            <div class="form-group">
+                                <label for="a">A)</label>
+                                <input type="text" id="a" name="a" required class="form-control">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="b">B)</label>
+                                <input type="text" id="b" name="b" required class="form-control">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="c">C)</label>
+                                <input type="text" id="c" name="c" required class="form-control">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="d">D)</label>
+                                <input type="text" id="d" name="d" required class="form-control">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="e">E)</label>
+                                <input type="text" id="e" name="e" required class="form-control">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="correta">Resposta Correta:</label>
+                            <select id="correta" name="correta" required class="form-control">
+                                <option value="">Selecione</option>
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
+                                <option value="E">E</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-plus"></i> Adicionar Questão
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Prática de Questões -->
+            <section class="pratica-section">
+                <div class="card">
+                    <h2><i class="fas fa-play-circle"></i> Prática de Questões</h2>
+                    
+                    <?php if (empty($questoes_pratica)): ?>
+                        <div class="empty-state">
+                            <i class="fas fa-question-circle"></i>
+                            <h3>Nenhuma questão disponível</h3>
+                            <p>Adicione questões primeiro para começar a praticar!</p>
+                        </div>
+                    <?php else: ?>
+                        <div class="questoes-grid">
+                            <?php foreach ($questoes_pratica as $questao): ?>
+                                <div class="questao-card">
+                                    <div class="questao-header">
+                                        <h3>Questão #<?= $questao['id'] ?></h3>
+                                        <div class="questao-meta">
+                                            <?php if ($questao['nome_disciplina']): ?>
+                                                <span class="disciplina-tag"><?= htmlspecialchars($questao['nome_disciplina']) ?></span>
+                                            <?php endif; ?>
+                                            <?php if ($questao['ja_respondida']): ?>
+                                                <span class="respondida-tag">Respondida</span>
+                                            <?php endif; ?>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="questao-content">
+                                        <p class="enunciado"><?= nl2br(htmlspecialchars(substr($questao['enunciado'], 0, 150))) ?>...</p>
+                                        
+                                        <div class="questao-actions">
+                                            <button class="btn-primary btn-small" onclick="abrirQuestao(<?= $questao['id'] ?>)">
+                                                <i class="fas fa-eye"></i> Ver Questão
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </section>
         </div>
     </div>
 
@@ -405,202 +332,7 @@ $questoes_respondidas = $stmt->fetchColumn();
         }
     </script>
 
-    <script>
-        // Sidebar mobile toggle
-        document.addEventListener('DOMContentLoaded', function() {
-            const sidebarToggle = document.getElementById('sidebarToggle');
-            const sidebar = document.getElementById('sidebar');
-            
-            if (sidebarToggle && sidebar) {
-                sidebarToggle.addEventListener('click', function() {
-                    sidebar.classList.toggle('open');
-                });
-                
-                // Fechar sidebar ao clicar fora dela em mobile
-                document.addEventListener('click', function(e) {
-                    if (window.innerWidth <= 768) {
-                        if (!sidebar.contains(e.target) && !sidebarToggle.contains(e.target)) {
-                            sidebar.classList.remove('open');
-                        }
-                    }
-                });
-            }
-        });
-    </script>
-
-    <style>
-        .alert {
-            background: linear-gradient(45deg, #ff4444, #cc0000);
-            color: white;
-            padding: 15px 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            color: white;
-        }
-        
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-        
-        .alternativas-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-        }
-        
-        .questoes-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        
-        .questao-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            padding: 20px;
-            transition: all 0.3s ease;
-            color: white;
-        }
-        
-        .questao-card:hover {
-            transform: translateY(-3px);
-            background: rgba(255, 255, 255, 0.15);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-        }
-        
-        .questao-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-        
-        .questao-header h3 {
-            color: white;
-            margin: 0;
-        }
-        
-        .questao-meta {
-            display: flex;
-            gap: 10px;
-        }
-        
-        .disciplina-tag {
-            background: linear-gradient(45deg, #ff4444, #cc0000);
-            color: white;
-            padding: 3px 10px;
-            border-radius: 15px;
-            font-size: 0.8rem;
-        }
-        
-        .respondida-tag {
-            background: #ff4444;
-            color: white;
-            padding: 3px 10px;
-            border-radius: 15px;
-            font-size: 0.8rem;
-        }
-        
-        .enunciado {
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 15px;
-            line-height: 1.5;
-        }
-        
-        .btn-small {
-            padding: 8px 16px;
-            font-size: 0.9rem;
-        }
-        
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-        
-        .modal-content {
-            background: rgba(0, 0, 0, 0.9);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            margin: 5% auto;
-            padding: 0;
-            border-radius: 15px;
-            width: 90%;
-            max-width: 800px;
-            max-height: 80vh;
-            overflow-y: auto;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-        }
-        
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 30px;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-            background: rgba(255, 255, 255, 0.1);
-        }
-        
-        .modal-header h2 {
-            margin: 0;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
-        
-        .close {
-            font-size: 2rem;
-            cursor: pointer;
-            color: rgba(255, 255, 255, 0.8);
-            transition: color 0.3s ease;
-        }
-        
-        .close:hover {
-            color: #ff4444;
-        }
-        
-        .modal-body {
-            padding: 30px;
-            background: rgba(0, 0, 0, 0.3);
-        }
-        
-        @media (max-width: 768px) {
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-            
-            .alternativas-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .questao-header {
-                flex-direction: column;
-                gap: 10px;
-                text-align: center;
-            }
-        }
-    </style>
+    <!-- Theme Logic -->
+    <script src="assets/js/theme.js"></script>
 </body>
 </html>

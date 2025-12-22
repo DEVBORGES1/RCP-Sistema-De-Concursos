@@ -21,10 +21,23 @@ class Database {
      * Construtor privado para implementar Singleton
      */
     private function __construct() {
-        $this->host = "localhost";
-        $this->db = "concursos";
-        $this->user = "root";
-        $this->pass = "1234";
+        $configFile = __DIR__ . '/../../config/database_config.php';
+        
+        if (file_exists($configFile)) {
+            $config = require $configFile;
+            $this->host = $config['host'];
+            $this->db = $config['db'];
+            $this->user = $config['user'];
+            $this->pass = $config['pass'];
+        } else {
+            // Fallback ou erro se o arquivo não existir
+            // Manter valores padrão por enquanto se o arquivo falhar ou lançar erro
+             $this->host = "localhost";
+             $this->db = "concursos";
+             $this->user = "root";
+             $this->pass = ""; // Senha vazia por segurança no fallback
+             error_log("Arquivo de configuração de banco de dados não encontrado: $configFile");
+        }
         
         try {
             $this->pdo = new PDO(

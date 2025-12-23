@@ -173,12 +173,12 @@ $estatisticas = $stmt->fetch();
         }
         
         .edital-title h2 {
-            color: white;
+            color: var(--text-primary);
             margin: 0 0 5px 0;
         }
         
         .edital-title p {
-            color: rgba(255, 255, 255, 0.8);
+            color: var(--text-secondary);
             margin: 0;
         }
         
@@ -191,27 +191,27 @@ $estatisticas = $stmt->fetch();
             display: flex;
             align-items: center;
             gap: 8px;
-            color: rgba(255, 255, 255, 0.8);
+            color: var(--text-secondary);
             font-weight: 500;
         }
         
         .stat i {
-            color: #ff4444;
+            color: var(--primary-color);
         }
         
         .card {
-            background: rgba(255, 255, 255, 0.1);
+            background: var(--bg-card);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid var(--border-color);
             border-radius: 15px;
             padding: 30px;
             margin-bottom: 30px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            color: white;
+            color: var(--text-primary);
         }
         
         .text-content {
-            background: rgba(255, 255, 255, 0.1);
+            background: var(--bg-input);
             border-radius: 10px;
             padding: 20px;
             max-height: 400px;
@@ -224,7 +224,7 @@ $estatisticas = $stmt->fetch();
             word-wrap: break-word;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: white;
+            color: var(--text-primary);
         }
         
         .disciplinas-grid {
@@ -234,20 +234,20 @@ $estatisticas = $stmt->fetch();
         }
         
         .disciplina-card {
-            background: rgba(255, 255, 255, 0.1);
+            background: var(--bg-card);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid var(--border-color);
             border-radius: 12px;
             padding: 20px;
             transition: all 0.3s ease;
-            color: white;
+            color: var(--text-primary);
         }
         
         .disciplina-card:hover {
             transform: translateY(-3px);
-            background: rgba(255, 255, 255, 0.15);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-            border-color: #ff4444;
+            background: var(--bg-card-hover);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-color);
         }
         
         .disciplina-header {
@@ -258,7 +258,7 @@ $estatisticas = $stmt->fetch();
         }
         
         .disciplina-header h4 {
-            color: white;
+            color: var(--text-primary);
             margin: 0;
             font-size: 1.1rem;
         }
@@ -267,12 +267,12 @@ $estatisticas = $stmt->fetch();
             display: flex;
             align-items: center;
             gap: 5px;
-            color: #666;
+            color: var(--text-secondary);
             font-size: 0.9rem;
         }
         
         .questoes-count i {
-            color: #667eea;
+            color: var(--primary-color);
         }
         
         .disciplina-actions {
@@ -328,8 +328,8 @@ $estatisticas = $stmt->fetch();
         }
         
         .action-btn {
-            background: #6c757d;
-            color: white;
+            background: var(--bg-card);
+            color: var(--text-primary);
             padding: 15px 20px;
             border: none;
             border-radius: 10px;
@@ -340,10 +340,11 @@ $estatisticas = $stmt->fetch();
             font-weight: 500;
             transition: all 0.3s ease;
             text-align: center;
+            border: 1px solid var(--border-color);
         }
         
         .action-btn:hover {
-            background: #5a6268;
+            background: var(--bg-card-hover);
             transform: translateY(-2px);
         }
         
@@ -360,9 +361,10 @@ $estatisticas = $stmt->fetch();
         }
         
         .empty-state h4 {
-            color: #2c3e50;
+            color: var(--text-primary);
             margin-bottom: 10px;
         }
     </style>
+    <script src="assets/js/theme.js"></script>
 </body>
 </html>

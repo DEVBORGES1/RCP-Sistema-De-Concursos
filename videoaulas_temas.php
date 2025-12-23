@@ -535,6 +535,7 @@ if (count($temas) == 1 && !empty($temas[0]['videoaulas']) && count($temas[0]['vi
             <?php endif; ?>
         </div>
     </div>
+    <script src="assets/js/theme.js"></script>
 </body>
 </html>
 

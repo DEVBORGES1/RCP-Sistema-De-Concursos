@@ -566,5 +566,6 @@ $active_page = 'simulados.php';
 
     <!-- Theme Logic -->
     <script src="assets/js/theme.js"></script>
+    <script src="assets/js/theme.js"></script>
 </body>
 </html>

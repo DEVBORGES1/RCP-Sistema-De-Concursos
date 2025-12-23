@@ -307,57 +307,6 @@ function gerarTextoSimuladoEdital() {
     </script>
 
     <style>
-        .alert {
-            padding: 15px 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 500;
-        }
-        
-        .alert-success {
-            background: linear-gradient(45deg, #ff4444, #cc0000);
-            color: white;
-        }
-        
-        .alert-warning {
-            background: linear-gradient(45deg, #ff6666, #ff3333);
-            color: white;
-        }
-        
-        .alert-error {
-            background: linear-gradient(45deg, #ff4444, #cc0000);
-            color: white;
-        }
-        
-        .card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            color: white;
-        }
-        
-        .upload-form {
-            margin-top: 20px;
-        }
-        
-        .form-group {
-            margin-bottom: 25px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: 600;
-            color: white;
-        }
-        
         .file-input-wrapper {
             position: relative;
             display: inline-block;
@@ -378,51 +327,30 @@ function gerarTextoSimuladoEdital() {
             align-items: center;
             justify-content: center;
             padding: 40px 20px;
-            border: 3px dashed #ff4444;
+            border: 3px dashed var(--primary-color);
             border-radius: 15px;
-            background: rgba(255, 255, 255, 0.1);
+            background: var(--bg-input);
             cursor: pointer;
             transition: all 0.3s ease;
             text-align: center;
-            color: white;
+            color: var(--text-primary);
         }
         
         .file-input-label:hover {
             border-color: #cc0000;
-            background: rgba(255, 255, 255, 0.15);
+            background: var(--bg-card-hover);
             transform: translateY(-2px);
         }
         
         .file-input-label i {
             font-size: 2.5rem;
-            color: #ff4444;
+            color: var(--primary-color);
             margin-bottom: 10px;
         }
         
         .file-input-label span {
-            color: white;
+            color: var(--text-primary);
             font-weight: 500;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(45deg, #ff4444, #cc0000);
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 10px;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(255, 68, 68, 0.4);
         }
         
         .features-grid {
@@ -435,14 +363,15 @@ function gerarTextoSimuladoEdital() {
         .feature-item {
             text-align: center;
             padding: 20px;
-            background: #f8f9fa;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
             border-radius: 10px;
             transition: all 0.3s ease;
         }
         
         .feature-item:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-md);
         }
         
         .feature-icon {
@@ -451,37 +380,18 @@ function gerarTextoSimuladoEdital() {
         
         .feature-icon i {
             font-size: 2rem;
-            color: #667eea;
+            color: var(--primary-color);
         }
         
         .feature-item h4 {
-            color: #2c3e50;
+            color: var(--text-primary);
             margin-bottom: 10px;
         }
         
         .feature-item p {
-            color: #666;
+            color: var(--text-secondary);
             font-size: 0.9rem;
             line-height: 1.5;
-        }
-        
-        .action-btn {
-            background: #6c757d;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .action-btn:hover {
-            background: #5a6268;
-            transform: translateY(-1px);
         }
     </style>
 
@@ -497,5 +407,6 @@ function gerarTextoSimuladoEdital() {
             }
         });
     </script>
+    <script src="assets/js/theme.js"></script>
 </body>
 </html>

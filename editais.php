@@ -258,9 +258,9 @@ $estatisticas = $stmt->fetch();
         }
         
         .stat-card {
-            background: rgba(255, 255, 255, 0.1);
+            background: var(--bg-card);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid var(--border-color);
             border-radius: 15px;
             padding: 25px;
             display: flex;
@@ -268,13 +268,13 @@ $estatisticas = $stmt->fetch();
             gap: 20px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
-            color: white;
+            color: var(--text-primary);
         }
         
         .stat-card:hover {
             transform: translateY(-3px);
-            background: rgba(255, 255, 255, 0.15);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+            background: var(--bg-card-hover);
+            box-shadow: var(--shadow-md);
         }
         
         .stat-icon {
@@ -295,31 +295,31 @@ $estatisticas = $stmt->fetch();
         .stat-content h3 {
             font-size: 2rem;
             font-weight: 700;
-            color: white;
+            color: var(--text-primary);
             margin: 0;
         }
         
         .stat-content p {
-            color: rgba(255, 255, 255, 0.8);
+            color: var(--text-secondary);
             margin: 5px 0 0 0;
             font-weight: 500;
         }
         
         .card {
-            background: rgba(255, 255, 255, 0.1);
+            background: var(--bg-card);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid var(--border-color);
             border-radius: 15px;
             padding: 30px;
             margin-bottom: 30px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            color: white;
+            color: var(--text-primary);
         }
         
         .empty-state {
             text-align: center;
             padding: 60px 20px;
-            color: rgba(255, 255, 255, 0.8);
+            color: var(--text-secondary);
         }
         
         .empty-state i {
@@ -345,20 +345,20 @@ $estatisticas = $stmt->fetch();
         }
         
         .edital-card {
-            background: rgba(255, 255, 255, 0.1);
+            background: var(--bg-card);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid var(--border-color);
             border-radius: 15px;
             padding: 25px;
             transition: all 0.3s ease;
-            color: white;
+            color: var(--text-primary);
         }
         
         .edital-card:hover {
             transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-            border-color: #ff4444;
+            background: var(--bg-card-hover);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-color);
         }
         
         .edital-header {
@@ -369,7 +369,7 @@ $estatisticas = $stmt->fetch();
         }
         
         .edital-header h3 {
-            color: white;
+            color: var(--text-primary);
             margin: 0;
             font-size: 1.2rem;
             flex: 1;
@@ -377,7 +377,7 @@ $estatisticas = $stmt->fetch();
         }
         
         .edital-date {
-            color: rgba(255, 255, 255, 0.8);
+            color: var(--text-secondary);
             font-size: 0.9rem;
             white-space: nowrap;
         }
@@ -393,12 +393,12 @@ $estatisticas = $stmt->fetch();
             display: flex;
             align-items: center;
             gap: 10px;
-            color: rgba(255, 255, 255, 0.8);
+            color: var(--text-secondary);
             font-size: 0.95rem;
         }
         
         .stat i {
-            color: #ff4444;
+            color: var(--primary-color);
             font-size: 1.1rem;
         }
         
@@ -449,8 +449,8 @@ $estatisticas = $stmt->fetch();
         }
         
         .action-btn {
-            background: #6c757d;
-            color: white;
+            background: var(--bg-card);
+            color: var(--text-primary);
             padding: 10px 20px;
             border: none;
             border-radius: 8px;
@@ -460,12 +460,14 @@ $estatisticas = $stmt->fetch();
             gap: 8px;
             font-weight: 500;
             transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
         }
         
         .action-btn:hover {
-            background: #5a6268;
+            background: var(--bg-card-hover);
             transform: translateY(-1px);
         }
     </style>
+    <script src="assets/js/theme.js"></script>
 </body>
 </html>

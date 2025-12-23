@@ -379,37 +379,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </script>
 
     <style>
-        .alert {
-            padding: 15px 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 500;
-        }
-        
-        .alert-success {
-            background: linear-gradient(45deg, #ff4444, #cc0000);
-            color: white;
-        }
-        
-        .alert-error {
-            background: linear-gradient(45deg, #ff4444, #cc0000);
-            color: white;
-        }
-        
-        .card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            color: white;
-        }
-        
         .cronograma-form {
             margin-top: 20px;
         }
@@ -429,87 +398,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         .form-group label {
             margin-bottom: 8px;
             font-weight: 600;
-            color: white;
+            color: var(--text-secondary);
         }
         
         .form-group select,
         .form-group input {
             padding: 12px 15px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            border: 2px solid var(--border-color);
             border-radius: 8px;
             font-size: 1rem;
             transition: all 0.3s ease;
-            background: rgba(0, 0, 0, 0.6);
-            color: white;
+            background: var(--bg-input);
+            color: var(--text-primary);
         }
 
         .form-group select option {
-            background: #2c3e50;
-            color: white;
+            background: var(--bg-input);
+            color: var(--text-primary);
             padding: 8px 12px;
         }
 
         .form-group select option:hover {
-            background: #34495e;
-        }
-
-        .form-group select option:checked {
-            background: #ff4444;
-            color: white;
-        }
-
-        .form-group select::placeholder,
-        .form-group input::placeholder {
-            color: rgba(255, 255, 255, 0.6);
+            background: var(--bg-card-hover);
         }
         
         .form-group select:focus,
         .form-group input:focus {
             outline: none;
-            border-color: #ff4444;
+            border-color: var(--primary-color);
             box-shadow: 0 0 0 3px rgba(255, 68, 68, 0.2);
-            background: rgba(255, 255, 255, 0.15);
-        }
-        
-        .btn-primary {
-            background: linear-gradient(45deg, #ff4444, #cc0000);
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 10px;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(255, 68, 68, 0.4);
-        }
-        
-        .btn-secondary {
-            background: #6c757d;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 8px;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
-        }
-        
-        .btn-secondary:hover {
-            background: #5a6268;
-            transform: translateY(-1px);
+            background: var(--bg-input);
         }
         
         .cronogramas-grid {
@@ -519,17 +437,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         
         .cronograma-card {
-            background: #f8f9fa;
+            background: var(--bg-card);
             border-radius: 12px;
             padding: 20px;
             transition: all 0.3s ease;
-            border: 2px solid transparent;
+            border: 2px solid var(--border-color);
         }
         
         .cronograma-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            border-color: #667eea;
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-color);
         }
         
         .cronograma-header {
@@ -537,13 +455,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         
         .cronograma-header h3 {
-            color: #2c3e50;
+            color: var(--text-primary);
             margin: 0 0 5px 0;
             font-size: 1.1rem;
         }
         
         .cronograma-date {
-            color: #666;
+            color: var(--text-muted);
             font-size: 0.9rem;
         }
         
@@ -557,12 +475,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             display: flex;
             align-items: center;
             gap: 5px;
-            color: #666;
+            color: var(--text-secondary);
             font-size: 0.9rem;
         }
         
         .stat i {
-            color: #667eea;
+            color: var(--primary-color);
         }
         
         .cronograma-actions {
@@ -581,18 +499,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         .stat-item {
             text-align: center;
             padding: 15px;
-            background: #f8f9fa;
+            background: var(--bg-input);
             border-radius: 10px;
         }
         
         .stat-item h3 {
-            color: #667eea;
+            color: var(--primary-color);
             margin: 0 0 5px 0;
             font-size: 1.5rem;
         }
         
         .stat-item p {
-            color: #666;
+            color: var(--text-secondary);
             margin: 0;
             font-size: 0.9rem;
         }
@@ -623,25 +541,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             text-align: center;
             margin-top: 20px;
         }
-        
-        .action-btn {
-            background: #6c757d;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .action-btn:hover {
-            background: #5a6268;
-            transform: translateY(-1px);
-        }
     </style>
+    <script src="assets/js/theme.js"></script>
 </body>
 </html>

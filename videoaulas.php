@@ -567,5 +567,6 @@ $stats = $stmt->fetch();
             }
         });
     </script>
+    <script src="assets/js/theme.js"></script>
 </body>
 </html>

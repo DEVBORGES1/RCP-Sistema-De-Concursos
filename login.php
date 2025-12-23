@@ -62,6 +62,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <!-- Right Side: Login Form -->
         <div class="auth-right">
+            <div class="theme-toggle-container" style="position: absolute; top: 20px; right: 20px;">
+                <button id="themeToggle" class="theme-toggle" title="Alternar Tema" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-color);">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
             <div class="auth-container">
                 <div class="auth-header">
                     <h2>Bem-vindo de volta!</h2>
@@ -108,6 +114,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="assets/js/theme.js"></script>
     <script>
         particlesJS("particles-js", {
             "particles": {

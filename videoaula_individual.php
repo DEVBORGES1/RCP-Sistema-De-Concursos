@@ -668,5 +668,6 @@ $videoaulas_relacionadas = $stmt->fetchAll();
         }
         <?php endif; ?>
     </script>
+    <script src="assets/js/theme.js"></script>
 </body>
 </html>

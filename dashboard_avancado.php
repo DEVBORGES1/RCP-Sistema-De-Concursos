@@ -453,13 +453,13 @@ $dados_usuario = $gamificacao->obterDadosUsuario($_SESSION["usuario_id"]);
 
         .level-progress h4 {
             margin: 0 0 10px 0;
-            color: white;
+            color: var(--text-primary);
         }
 
         .progress-bar {
             width: 100%;
             height: 20px;
-            background: rgba(255, 255, 255, 0.2);
+            background: var(--bg-input);
             border-radius: 10px;
             overflow: hidden;
             margin-bottom: 10px;
@@ -478,19 +478,20 @@ $dados_usuario = $gamificacao->obterDadosUsuario($_SESSION["usuario_id"]);
         }
 
         .discipline-card {
-            background: rgba(255, 255, 255, 0.1);
+            background: var(--bg-card);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid var(--border-color);
             border-radius: 12px;
             padding: 20px;
             transition: all 0.3s ease;
-            color: white;
+            color: var(--text-primary);
         }
 
         .discipline-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-            background: rgba(255, 255, 255, 0.15);
+            box-shadow: var(--shadow-md);
+            background: var(--bg-card-hover);
+            border-color: var(--primary-color);
         }
 
         .discipline-header {
@@ -502,7 +503,7 @@ $dados_usuario = $gamificacao->obterDadosUsuario($_SESSION["usuario_id"]);
 
         .discipline-header h4 {
             margin: 0;
-            color: white;
+            color: var(--text-primary);
             font-weight: 600;
         }
 
@@ -513,30 +514,11 @@ $dados_usuario = $gamificacao->obterDadosUsuario($_SESSION["usuario_id"]);
             font-weight: bold;
         }
 
-        .level-1 {
-            background: #ff6b6b;
-            color: white;
-        }
-
-        .level-2 {
-            background: #ffa726;
-            color: white;
-        }
-
-        .level-3 {
-            background: #ffeb3b;
-            color: #333;
-        }
-
-        .level-4 {
-            background: #66bb6a;
-            color: white;
-        }
-
-        .level-5 {
-            background: #42a5f5;
-            color: white;
-        }
+        .level-1 { background: #ff6b6b; color: white; }
+        .level-2 { background: #ffa726; color: white; }
+        .level-3 { background: #ffeb3b; color: #333; }
+        .level-4 { background: #66bb6a; color: white; }
+        .level-5 { background: #42a5f5; color: white; }
 
         .discipline-stats {
             display: grid;
@@ -550,23 +532,23 @@ $dados_usuario = $gamificacao->obterDadosUsuario($_SESSION["usuario_id"]);
             align-items: center;
             gap: 5px;
             font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.8);
+            color: var(--text-secondary);
         }
 
         .stat i {
-            color: #ff4444;
+            color: var(--primary-color);
         }
 
         .progress-bar-small {
             width: 100%;
             height: 8px;
-            background: rgba(255, 255, 255, 0.2);
+            background: var(--bg-input);
             border-radius: 4px;
             overflow: hidden;
         }
 
         .progress-bar-small .progress-fill {
-            background: linear-gradient(45deg, #ff4444, #cc0000);
+            background: var(--primary-gradient);
             height: 100%;
             transition: width 0.3s ease;
         }
@@ -578,19 +560,19 @@ $dados_usuario = $gamificacao->obterDadosUsuario($_SESSION["usuario_id"]);
         }
 
         .goal-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
             border-radius: 10px;
             padding: 15px;
-            border-left: 4px solid #ff4444;
-            color: white;
+            border-left: 4px solid var(--primary-color);
+            color: var(--text-primary);
             transition: all 0.3s ease;
         }
 
         .goal-card:hover {
-            background: rgba(255, 255, 255, 0.15);
+            background: var(--bg-card-hover);
             transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
         }
 
         .goal-header {
@@ -602,7 +584,7 @@ $dados_usuario = $gamificacao->obterDadosUsuario($_SESSION["usuario_id"]);
 
         .goal-header h5 {
             margin: 0;
-            color: white;
+            color: var(--text-primary);
             font-weight: 600;
         }
 
@@ -624,7 +606,7 @@ $dados_usuario = $gamificacao->obterDadosUsuario($_SESSION["usuario_id"]);
 
         .goal-progress span {
             font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.8);
+            color: var(--text-secondary);
         }
 
         .challenges-grid {
@@ -634,20 +616,20 @@ $dados_usuario = $gamificacao->obterDadosUsuario($_SESSION["usuario_id"]);
         }
 
         .challenge-card {
-            background: rgba(255, 255, 255, 0.1);
+            background: var(--bg-card);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid var(--border-color);
             border-radius: 10px;
             padding: 15px;
             transition: all 0.3s ease;
-            color: white;
+            color: var(--text-primary);
         }
 
         .challenge-card:hover {
-            border-color: #ff4444;
+            border-color: var(--primary-color);
             transform: translateY(-2px);
-            background: rgba(255, 255, 255, 0.15);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            background: var(--bg-card-hover);
+            box-shadow: var(--shadow-md);
         }
 
         .challenge-header {
@@ -659,7 +641,7 @@ $dados_usuario = $gamificacao->obterDadosUsuario($_SESSION["usuario_id"]);
 
         .challenge-header h4 {
             margin: 0;
-            color: white;
+            color: var(--text-primary);
             font-weight: 600;
         }
 
@@ -707,7 +689,7 @@ $dados_usuario = $gamificacao->obterDadosUsuario($_SESSION["usuario_id"]);
 
         #progressChart {
             max-height: 300px;
-            background: rgba(255, 255, 255, 0.1);
+            background: var(--bg-card);
             backdrop-filter: blur(20px);
             border-radius: 15px;
             padding: 20px;
@@ -715,9 +697,9 @@ $dados_usuario = $gamificacao->obterDadosUsuario($_SESSION["usuario_id"]);
 
         /* Cards principais */
         .card {
-            background: rgba(255, 255, 255, 0.1);
+            background: var(--bg-card);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid var(--border-color);
             border-radius: 15px;
             padding: 25px;
             margin-bottom: 30px;
@@ -726,12 +708,12 @@ $dados_usuario = $gamificacao->obterDadosUsuario($_SESSION["usuario_id"]);
         }
 
         .card:hover {
-            background: rgba(255, 255, 255, 0.15);
+            background: var(--bg-card-hover);
             transform: translateY(-2px);
         }
 
         .card h3 {
-            color: white;
+            color: var(--text-primary);
             margin-bottom: 20px;
             font-size: 1.3rem;
             display: flex;
@@ -744,7 +726,7 @@ $dados_usuario = $gamificacao->obterDadosUsuario($_SESSION["usuario_id"]);
         }
 
         .card h4 {
-            color: white;
+            color: var(--text-primary);
             margin-bottom: 15px;
             font-size: 1.1rem;
         }
@@ -836,20 +818,20 @@ $dados_usuario = $gamificacao->obterDadosUsuario($_SESSION["usuario_id"]);
         }
 
         .nav-btn {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
+            background: var(--bg-card);
+            color: var(--text-primary);
             padding: 10px 15px;
             border-radius: 8px;
             text-decoration: none;
             transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid var(--border-color);
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
         .nav-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
+            background: var(--bg-card-hover);
             transform: translateY(-2px);
         }
     </style>
@@ -857,6 +839,9 @@ $dados_usuario = $gamificacao->obterDadosUsuario($_SESSION["usuario_id"]);
     <script>
         // Gráfico de progresso temporal
         const ctx = document.getElementById('progressChart').getContext('2d');
+        const isLightMode = document.body.classList.contains('light-mode');
+        const textColor = isLightMode ? '#1a1a1a' : '#ffffff';
+        const gridColor = isLightMode ? '#e2e8f0' : 'rgba(255, 255, 255, 0.1)';
 
         // Dados do PHP (simulados para demonstração)
         const dadosTemporais = <?= json_encode($dashboard_completo['estatisticas_temporais']['dados_diarios'] ?? []) ?>;
@@ -894,57 +879,34 @@ $dados_usuario = $gamificacao->obterDadosUsuario($_SESSION["usuario_id"]);
                         type: 'linear',
                         display: true,
                         position: 'left',
+                        ticks: { color: textColor },
+                        grid: { color: gridColor }
                     },
                     y1: {
                         type: 'linear',
                         display: true,
                         position: 'right',
-                        grid: {
-                            drawOnChartArea: false,
-                        },
+                        ticks: { color: textColor },
+                        grid: { drawOnChartArea: false }
+                    },
+                    x: {
+                        ticks: { color: textColor },
+                        grid: { color: gridColor }
                     }
                 },
                 plugins: {
                     legend: {
                         position: 'top',
                         labels: {
-                            color: 'white',
-                            font: {
-                                size: 12,
-                                weight: 'bold'
-                            }
-                        }
-                    }
-                },
-                scales: {
-                    x: {
-                        ticks: {
-                            color: 'white'
-                        },
-                        grid: {
-                            color: 'rgba(255, 255, 255, 0.1)'
-                        }
-                    },
-                    y: {
-                        ticks: {
-                            color: 'white'
-                        },
-                        grid: {
-                            color: 'rgba(255, 255, 255, 0.1)'
-                        }
-                    },
-                    y1: {
-                        ticks: {
-                            color: 'white'
-                        },
-                        grid: {
-                            drawOnChartArea: false,
+                            color: textColor,
+                            font: { size: 12, weight: 'bold' }
                         }
                     }
                 }
             }
         });
     </script>
+    <script src="assets/js/theme.js"></script>
 </body>
 
 </html>

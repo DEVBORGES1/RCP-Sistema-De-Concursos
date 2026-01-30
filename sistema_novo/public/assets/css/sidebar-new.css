@@ -1,0 +1,248 @@
+/* Sidebar Premium Redesign - Dark Glass Default */
+:root {
+    --sidebar-bg: rgba(15, 23, 42, 0.95);
+    /* Slate 900 with opacity */
+    --sidebar-text: #94a3b8;
+    /* Slate 400 */
+    --sidebar-text-active: #ffffff;
+    --sidebar-header-bg: transparent;
+    --sidebar-item-hover: rgba(255, 255, 255, 0.08);
+    --sidebar-item-active-bg: linear-gradient(90deg, rgba(255, 68, 68, 0.2) 0%, rgba(255, 68, 68, 0.05) 100%);
+    --sidebar-border: rgba(255, 255, 255, 0.1);
+    --sidebar-width: 260px;
+    --logo-color: #f1f5f9;
+    --glass-border: 1px solid rgba(255, 255, 255, 0.05);
+
+    /* Shadow for depth */
+    --sidebar-shadow: 4px 0 24px rgba(0, 0, 0, 0.5);
+}
+
+body.light-mode {
+    --sidebar-bg: #ffffff;
+    --sidebar-text: #64748b;
+    --sidebar-text-active: #ff4444;
+    --sidebar-item-hover: #f8fafc;
+    --sidebar-item-active-bg: rgba(255, 68, 68, 0.1);
+    --sidebar-border: #e2e8f0;
+    --logo-color: #1e293b;
+    --sidebar-header-bg: #ffffff;
+    --sidebar-shadow: 4px 0 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Base Override */
+.sidebar {
+    width: var(--sidebar-width);
+    background: var(--sidebar-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-right: 1px solid var(--sidebar-border);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    box-shadow: var(--sidebar-shadow);
+    transition: all 0.3s ease;
+}
+
+/* Brand Section */
+.sidebar-brand {
+    padding: 28px 24px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--sidebar-border);
+}
+
+.brand-icon {
+    width: 38px;
+    height: 38px;
+    background: linear-gradient(135deg, #ff4444 0%, #b91c1c 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    box-shadow: 0 0 15px rgba(255, 68, 68, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.brand-icon::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(255, 255, 255, 0.2), transparent);
+}
+
+.brand-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: var(--logo-color);
+    letter-spacing: -0.03em;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Navigation List */
+.sidebar-menu {
+    list-style: none;
+    padding: 0 12px;
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+.sidebar-menu::-webkit-scrollbar {
+    width: 5px;
+}
+
+.sidebar-menu::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar-menu::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    transition: background 0.3s;
+}
+
+.sidebar-menu::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.menu-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--sidebar-text);
+    opacity: 0.6;
+    padding: 20px 12px 10px;
+    letter-spacing: 0.05em;
+}
+
+.menu-item {
+    margin-bottom: 4px;
+}
+
+.menu-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 14px;
+    color: var(--sidebar-text);
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    gap: 12px;
+    position: relative;
+    border: 1px solid transparent;
+}
+
+.menu-link:hover {
+    background: var(--sidebar-item-hover);
+    color: var(--logo-color);
+    transform: translateX(4px);
+    border-color: var(--sidebar-border);
+}
+
+.menu-link.active {
+    background: var(--sidebar-item-active-bg);
+    color: var(--sidebar-text-active);
+    font-weight: 600;
+    border: 1px solid rgba(255, 68, 68, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.menu-icon {
+    width: 20px;
+    text-align: center;
+    font-size: 1.1rem;
+    color: currentColor;
+    opacity: 0.9;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* Shortcuts & Badges */
+.shortcut-link {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.badge {
+    background: rgba(255, 68, 68, 0.2);
+    color: #ff4444;
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: 700;
+    margin-left: auto;
+    border: 1px solid rgba(255, 68, 68, 0.3);
+}
+
+.menu-link:hover .badge {
+    background: #ff4444;
+    color: white;
+}
+
+/* Botão Flutuante (Novo Cronograma) */
+.sidebar-action {
+    margin: 20px 16px 30px;
+}
+
+.btn-new-crono {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px;
+    background: linear-gradient(135deg, #ff4444 0%, #cc0000 100%);
+    color: white;
+    border-radius: 14px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(255, 68, 68, 0.3);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-new-crono::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.btn-new-crono:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(255, 68, 68, 0.4);
+}
+
+.btn-new-crono:hover::before {
+    left: 100%;
+}
+
+/* Responsiveness adjustments */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+        box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+}

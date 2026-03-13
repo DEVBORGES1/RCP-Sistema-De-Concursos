@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - RCP Sistema de Concursos</title>
+    <title>Cadastro - RCP Sistema de Concursos</title>
     <link rel="stylesheet" href="{{ asset('assets/css/auth.css') }}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -31,7 +31,7 @@
             </div>
         </div>
 
-        <!-- Right Side: Login Form -->
+        <!-- Right Side: Register Form -->
         <div class="auth-right">
             <div class="theme-toggle-container" style="position: absolute; top: 20px; right: 20px;">
                 <button id="themeToggle" class="theme-toggle" title="Alternar Tema" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--auth-text);">
@@ -41,8 +41,8 @@
 
             <div class="auth-container">
                 <div class="auth-header">
-                    <h2>Bem-vindo de volta!</h2>
-                    <p>Entre para continuar sua preparação.</p>
+                    <h2>Crie sua conta!</h2>
+                    <p>Junte-se a nós e comece sua preparação.</p>
                 </div>
 
                 @if ($errors->any())
@@ -56,8 +56,16 @@
                     </div>
                 @endif
 
-                <form method="POST" action="{{ route('login') }}" class="auth-form">
+                <form method="POST" action="{{ route('register') }}" class="auth-form">
                     @csrf
+                    <div class="form-group">
+                        <label for="nome">Nome Completo</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="nome" name="nome" value="{{ old('nome') }}" placeholder="Seu nome" required autofocus>
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+
                     <div class="form-group">
                         <label for="email">E-mail</label>
                         <div class="input-wrapper">
@@ -67,20 +75,28 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="senha">Senha</label>
+                        <label for="password">Senha</label>
                         <div class="input-wrapper">
-                            <input type="password" id="password" name="password" placeholder="Sua senha secreta" required>
+                            <input type="password" id="password" name="password" placeholder="Mínimo 8 caracteres" required>
+                            <i class="fas fa-lock"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password_confirmation">Confirmação de Senha</label>
+                        <div class="input-wrapper">
+                            <input type="password" id="password_confirmation" name="password_confirmation" placeholder="Mínimo 8 caracteres" required>
                             <i class="fas fa-lock"></i>
                         </div>
                     </div>
 
                     <button type="submit" class="btn-auth">
-                        <i class="fas fa-sign-in-alt"></i> Entrar
+                        <i class="fas fa-user-plus"></i> Cadastrar-se
                     </button>
                 </form>
 
                 <div class="auth-footer">
-                    <p>Ainda não tem uma conta? <a href="{{ route('register') }}">Criar conta gratuita</a></p>
+                    <p>Já tem uma conta? <a href="{{ route('login') }}">Faça login</a></p>
                     <a href="{{ url('/') }}" class="back-link">
                         <i class="fas fa-arrow-left"></i> Voltar ao início
                     </a>

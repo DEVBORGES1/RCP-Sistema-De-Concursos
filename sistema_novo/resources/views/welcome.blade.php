@@ -300,7 +300,7 @@
             <div class="nav-actions">
                 <a href="{{ route('login') }}" class="nav-link">Plataforma</a>
                 <a href="{{ route('login') }}" class="nav-link">Login</a>
-                <a href="{{ route('login') }}" class="nav-btn">Começar Agora</a>
+                <a href="{{ route('register') }}" class="nav-btn">Começar Agora</a>
             </div>
         </nav>
 
@@ -315,7 +315,7 @@
                     Junte-se à revolução dos estudos. Nossa mascote e IA personalizam sua jornada com recompensas, rankings e conteúdo focado no edital.
                 </p>
                 <div class="hero-actions">
-                    <a href="{{ route('login') }}" class="nav-btn">Criar Conta Grátis</a>
+                    <a href="{{ route('register') }}" class="nav-btn">Criar Conta Grátis</a>
                     <a href="#features" class="nav-link" style="margin: 0; border: 1px solid rgba(255,255,255,0.2); border-radius: 100px; padding: 12px 28px;">
                         Ver Recursos
                     </a>

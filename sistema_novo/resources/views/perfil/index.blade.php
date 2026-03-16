@@ -153,7 +153,7 @@
         
         <!-- Certificados Recentes -->
          <section class="certificates-section" style="margin-top: 30px;">
-            <h3 style="color: white; margin-bottom: 20px; font-size: 1.2rem;">Meus Certificados</h3>
+            <h3 style="color: var(--dash-text-primary, white); margin-bottom: 20px; font-size: 1.2rem;">Meus Certificados</h3>
             @if (count($certificados) === 0)
                 <div class="empty-state-mini">
                     <p>Nenhum certificado ainda. Assista às aulas!</p>

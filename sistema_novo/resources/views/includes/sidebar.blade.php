@@ -122,6 +122,12 @@
         <!-- Conta -->
         <div class="menu-label">Conta</div>
         <li class="menu-item">
+            <a href="{{ route('meu-plano') }}" class="menu-link {{ request()->routeIs('meu-plano') ? 'active' : '' }}" style="color: var(--primary-color);">
+                <i class="fas fa-crown menu-icon"></i>
+                <span>Assinatura (Meu Plano)</span>
+            </a>
+        </li>
+        <li class="menu-item">
             <a href="{{ route('perfil.index') }}" class="menu-link {{ request()->routeIs('perfil.*') ? 'active' : '' }}">
                 <i class="fas fa-user menu-icon"></i>
                 <span>Meu Perfil</span>

@@ -513,6 +513,10 @@
             flex: 1;
             margin-right: 20px;
             line-height: 1.4;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            word-break: break-all;
+            min-width: 0; /* allows flex item to shrink below content size */
         }
         
         .edital-date {

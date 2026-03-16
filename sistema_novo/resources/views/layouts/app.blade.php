@@ -12,17 +12,21 @@
     <link rel="stylesheet" href="{{ asset('assets/css/game.css') }}"> 
     
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="icon" href="{{ asset('assets/imagens/icon/iconeweb.png') }}" type="image/png">
     
     @stack('styles')
 </head>
 <body>
     
-    @include('includes.sidebar')
+    @if(!request()->routeIs('planos'))
+        @include('includes.sidebar')
+        <div class="content-with-sidebar">
+    @else
+        <div class="content-full">
+    @endif
 
-    <div class="content-with-sidebar">
-        <div class="container">
+        <div class="container" style="{{ request()->routeIs('planos') ? 'margin-left: 0; max-width: 100%;' : '' }}">
             
             @include('includes.header')
 

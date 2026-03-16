@@ -298,6 +298,7 @@
                 <span>RCP Concursos</span>
             </div>
             <div class="nav-actions">
+                <a href="{{ route('planos') }}" class="nav-link">Planos e Preços</a>
                 <a href="{{ route('login') }}" class="nav-link">Plataforma</a>
                 <a href="{{ route('login') }}" class="nav-link">Login</a>
                 <a href="{{ route('register') }}" class="nav-btn">Começar Agora</a>

@@ -4,10 +4,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\SubscriptionController;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/planos', [SubscriptionController::class, 'pricing'])->name('planos');
 
 Route::middleware('guest')->group(function () {
     Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
@@ -20,6 +23,9 @@ Route::middleware('guest')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    
+    // Rotas SaaS
+    Route::get('/meu-plano', [SubscriptionController::class, 'meuPlano'])->name('meu-plano');
     
     // Rotas de Editais
     Route::post('editais/{id}/reanalisar', [\App\Http\Controllers\EditaisController::class, 'reanalisar'])->name('editais.reanalisar');

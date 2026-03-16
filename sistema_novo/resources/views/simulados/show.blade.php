@@ -5,7 +5,7 @@
 @section('content')
 <div class="container">
     <div class="header-content" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
-        <h1 style="color: white; font-size: 1.8rem;"><i class="fas fa-clipboard-list"></i> {{ $simulado->nome }}</h1>
+        <h1 style="color: var(--dash-text-primary, white); font-size: 1.8rem;"><i class="fas fa-clipboard-list"></i> {{ $simulado->nome }}</h1>
         <div class="user-info" style="display: flex; gap: 15px; align-items: center;">
             @if (!$viewMode)
                 <div class="timer" id="timer" style="background: linear-gradient(45deg, #ff4444, #cc0000); color: white; padding: 10px 20px; border-radius: 25px; display: flex; align-items: center; gap: 8px; font-weight: 600;">
@@ -24,7 +24,7 @@
         <section class="resultado-section" style="margin-bottom: 30px;">
             <div class="card" style="padding: 30px; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2);">
                 <div class="resultado-header" style="text-align: center; margin-bottom: 30px;">
-                    <h2 style="color: white; margin-bottom: 30px;"><i class="fas fa-trophy" style="color: #ff4444;"></i> Resultado do Simulado</h2>
+                    <h2 style="color: var(--dash-text-primary, white); margin-bottom: 30px;"><i class="fas fa-trophy" style="color: #ff4444;"></i> Resultado do Simulado</h2>
                     <div class="resultado-stats" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px;">
                         <div class="stat-item" style="padding: 20px; background: rgba(255,255,255,0.05); border-radius: 10px; text-align: center;">
                             <i class="fas fa-check-circle" style="font-size: 2rem; color: #28a745; margin-bottom: 10px;"></i>
@@ -178,10 +178,10 @@
 
 <style>
     .alternativa-label:hover {
-        background: rgba(255,255,255,0.05);
+        background: var(--dash-border, rgba(255,255,255,0.05));
     }
     input[type='radio']:checked + span {
-        color: white;
+        color: var(--dash-text-primary, white);
     }
     /* Estilo simples para radio custom se necessário, mantendo nativo por enquanto */
 </style>

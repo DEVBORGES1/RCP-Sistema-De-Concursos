@@ -5,7 +5,7 @@
 @section('content')
 <div class="container">
     <div class="header-content" style="display: flex;justify-content: space-between;align-items: center;margin-bottom: 30px;">
-        <h1 style="font-size: 1.8rem;color:white;"><i class="{{ $videoaula->categoria_icone }}"></i> {{ $videoaula->titulo }}</h1>
+        <h1 style="font-size: 1.8rem;color: var(--dash-text-primary, white);"><i class="{{ $videoaula->categoria_icone }}"></i> {{ $videoaula->titulo }}</h1>
         <div class="user-info">
             <a href="{{ route('videoaulas.show', $videoaula->categoria_id) }}" class="btn-secondary" style="padding: 10px 20px;text-decoration: none;display: flex;align-items: center;gap: 5px;">
                 <i class="fas fa-arrow-left"></i>
@@ -42,7 +42,7 @@
 
         <div class="videoaula-content" style="display: grid; grid-template-columns: 2fr 1fr; gap: 30px; margin-bottom: 30px;">
             <!-- Player e Info -->
-            <div class="videoaula-player" style="background: rgba(255,255,255,0.05); border-radius: 15px; padding: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+            <div class="videoaula-player" style="background: var(--dash-bg-card, rgba(255,255,255,0.05)); border-radius: 15px; padding: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border: 1px solid var(--dash-border, transparent);">
                 <div class="video-player" id="videoPlayer" style="width: 100%; height: 500px; border-radius: 10px; margin-bottom: 20px; background: #000; overflow: hidden; position: relative;">
                     @php
                         $url = $videoaula->url_video;
@@ -75,8 +75,8 @@
                 </div>
 
                 <div class="videoaula-info">
-                    <h3 style="margin: 0 0 15px 0; color: white; font-size: 1.3em;"><i class="fas fa-info-circle"></i> Sobre esta videoaula</h3>
-                    <p style="margin: 0 0 15px 0; color: #ccc; line-height: 1.6;">{{ $videoaula->descricao }}</p>
+                    <h3 style="margin: 0 0 15px 0; color: var(--dash-text-primary, white); font-size: 1.3em;"><i class="fas fa-info-circle"></i> Sobre esta videoaula</h3>
+                    <p style="margin: 0 0 15px 0; color: var(--dash-text-secondary, #ccc); line-height: 1.6;">{{ $videoaula->descricao }}</p>
                     
                     <div class="videoaula-actions" style="display: flex; gap: 15px; margin-top: 20px;">
                         @if ($videoaula->concluida)
@@ -98,40 +98,40 @@
             <!-- Sidebar -->
             <div class="videoaula-sidebar" style="display: flex; flex-direction: column; gap: 20px;">
                 <!-- Progresso -->
-                <div class="progress-card" style="background: rgba(255,255,255,0.05); border-radius: 15px; padding: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                <div class="progress-card" style="background: var(--dash-bg-card, rgba(255,255,255,0.05)); border-radius: 15px; padding: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border: 1px solid var(--dash-border, transparent);">
                     <div class="progress-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                        <span class="progress-label" style="font-size: 1.1em; font-weight: 600; color: white;">Seu Progresso</span>
+                        <span class="progress-label" style="font-size: 1.1em; font-weight: 600; color: var(--dash-text-primary, white);">Seu Progresso</span>
                         <span class="progress-percentage" style="font-size: 1.3em; font-weight: bold; color: {{ $videoaula->categoria_cor }};">{{ $progresso_percentual }}%</span>
                     </div>
-                    <div class="progress-bar" style="width: 100%; height: 12px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; margin-bottom: 15px;">
+                    <div class="progress-bar" style="width: 100%; height: 12px; background: var(--dash-border, rgba(255,255,255,0.1)); border-radius: 10px; overflow: hidden; margin-bottom: 15px;">
                         <div class="progress-fill" style="height: 100%; background: linear-gradient(90deg, {{ $videoaula->categoria_cor }}, {{ $videoaula->categoria_cor }}88); width: {{ $progresso_percentual }}%;"></div>
                     </div>
                     
                     <div class="progress-stats" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
-                        <div class="stat-item" style="text-align: center; padding: 15px; background: rgba(255,255,255,0.05); border-radius: 10px; border-left: 4px solid {{ $videoaula->categoria_cor }};">
+                        <div class="stat-item" style="text-align: center; padding: 15px; background: var(--dash-border, rgba(255,255,255,0.05)); border-radius: 10px; border-left: 4px solid {{ $videoaula->categoria_cor }};">
                             <h4 style="margin: 0; color: {{ $videoaula->categoria_cor }}; font-size: 1.5em; font-weight: bold;">{{ $videoaula->duracao }}</h4>
-                            <p style="margin: 5px 0 0 0; color: #ccc; font-size: 0.9em;">Minutos</p>
+                            <p style="margin: 5px 0 0 0; color: var(--dash-text-secondary, #ccc); font-size: 0.9em;">Minutos</p>
                         </div>
-                        <div class="stat-item" style="text-align: center; padding: 15px; background: rgba(255,255,255,0.05); border-radius: 10px; border-left: 4px solid {{ $videoaula->categoria_cor }};">
+                        <div class="stat-item" style="text-align: center; padding: 15px; background: var(--dash-border, rgba(255,255,255,0.05)); border-radius: 10px; border-left: 4px solid {{ $videoaula->categoria_cor }};">
                             <h4 style="margin: 0; color: {{ $videoaula->categoria_cor }}; font-size: 1.5em; font-weight: bold;">{{ round($videoaula->tempo_assistido / 60, 1) }}</h4>
-                            <p style="margin: 5px 0 0 0; color: #ccc; font-size: 0.9em;">Assistidos</p>
+                            <p style="margin: 5px 0 0 0; color: var(--dash-text-secondary, #ccc); font-size: 0.9em;">Assistidos</p>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Relacionadas -->
                 @if ($relacionadas->count() > 0)
-                <div class="related-videoaulas" style="background: rgba(255,255,255,0.05); border-radius: 15px; padding: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                    <h3 style="margin: 0 0 20px 0; color: white; font-size: 1.3em;"><i class="fas fa-list"></i> Relacionadas</h3>
+                <div class="related-videoaulas" style="background: var(--dash-bg-card, rgba(255,255,255,0.05)); border-radius: 15px; padding: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border: 1px solid var(--dash-border, transparent);">
+                    <h3 style="margin: 0 0 20px 0; color: var(--dash-text-primary, white); font-size: 1.3em;"><i class="fas fa-list"></i> Relacionadas</h3>
                     <div class="related-list" style="display: flex; flex-direction: column; gap: 10px;">
                         @foreach ($relacionadas as $relacionada)
-                            <a href="{{ route('videoaulas.player', $relacionada->id) }}" class="related-item" style="display: flex; align-items: center; gap: 15px; padding: 15px; background: rgba(255,255,255,0.05); border-radius: 10px; text-decoration: none; color: white; transition: all 0.3s ease;">
+                            <a href="{{ route('videoaulas.player', $relacionada->id) }}" class="related-item" style="display: flex; align-items: center; gap: 15px; padding: 15px; background: var(--dash-border, rgba(255,255,255,0.05)); border-radius: 10px; text-decoration: none; color: var(--dash-text-primary, white); transition: all 0.3s ease;">
                                 <div class="related-item-icon" style="width: 40px; height: 40px; border-radius: 8px; background: {{ $videoaula->categoria_cor }}; display: flex; align-items: center; justify-content: center; color: white;">
                                     <i class="fas fa-play"></i>
                                 </div>
                                 <div class="related-item-info">
                                     <h4 style="margin: 0; font-size: 1em;">{{ $relacionada->titulo }}</h4>
-                                    <p style="margin: 5px 0 0 0; color: #ccc; font-size: 0.8em;">{{ $relacionada->duracao }} min</p>
+                                    <p style="margin: 5px 0 0 0; color: var(--dash-text-secondary, #ccc); font-size: 0.8em;">{{ $relacionada->duracao }} min</p>
                                 </div>
                             </a>
                         @endforeach

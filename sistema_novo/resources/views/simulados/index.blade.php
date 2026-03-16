@@ -25,16 +25,16 @@
             <form method="POST" action="{{ route('simulados.store') }}">
                 @csrf
                 <div class="form-group" style="margin-bottom: 20px;">
-                    <label for="nome_simulado" style="display: block; margin-bottom: 10px;">Nome do Simulado:</label>
+                    <label for="nome_simulado" style="display: block; margin-bottom: 10px; color: var(--dash-text-primary);">Nome do Simulado:</label>
                     <input type="text" id="nome_simulado" name="nome_simulado"
                         placeholder="Ex: Simulado de Português" required class="form-control" 
-                        style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.2); color: white;">
+                        style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--dash-border, rgba(255,255,255,0.2)); background: var(--dash-bg-card, rgba(0,0,0,0.2)); color: var(--dash-text-primary, white);">
                 </div>
 
                 <div class="form-group" style="margin-bottom: 20px;">
-                    <label for="quantidade_questoes" style="display: block; margin-bottom: 10px;">Quantidade de Questões:</label>
+                    <label for="quantidade_questoes" style="display: block; margin-bottom: 10px; color: var(--dash-text-primary);">Quantidade de Questões:</label>
                     <select id="quantidade_questoes" name="quantidade_questoes" required class="form-control"
-                        style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: #2a2a2a; color: white;">
+                        style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--dash-border, rgba(255,255,255,0.2)); background: var(--dash-bg-card, #2a2a2a); color: var(--dash-text-primary, white);">
                         <option value="5">5 questões</option>
                         <option value="10">10 questões</option>
                         <option value="15">15 questões</option>
@@ -44,9 +44,9 @@
                 </div>
 
                 <div class="form-group" style="margin-bottom: 25px;">
-                    <label for="disciplina_id" style="display: block; margin-bottom: 10px;">Disciplina (opcional):</label>
+                    <label for="disciplina_id" style="display: block; margin-bottom: 10px; color: var(--dash-text-primary);">Disciplina (opcional):</label>
                     <select id="disciplina_id" name="disciplina_id" class="form-control"
-                        style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: #2a2a2a; color: white;">
+                        style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--dash-border, rgba(255,255,255,0.2)); background: var(--dash-bg-card, #2a2a2a); color: var(--dash-text-primary, white);">
                         <option value="">Todas as disciplinas</option>
                         @foreach ($disciplinas as $disciplina)
                             <option value="{{ $disciplina->id }}">
@@ -69,8 +69,8 @@
         <!-- Rat Spinner Animation -->
         <div class="rat-spinner" style="width: 120px; height: 120px; background: url('{{ asset('assets/images/rat_spinner.png') }}') no-repeat center center; background-size: contain; animation: spinRat 1s linear infinite;"></div>
         
-        <h3 style="color: white; margin-top: 25px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Gerando Simulados...</h3>
-        <p style="color: #aaa; font-size: 0.9rem;">O Rato Concurseiro está buscando as melhores questões!</p>
+        <h3 style="color: var(--dash-text-primary, white); margin-top: 25px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Gerando Simulados...</h3>
+        <p style="color: var(--dash-text-secondary, #aaa); font-size: 0.9rem;">O Rato Concurseiro está buscando as melhores questões!</p>
     </div>
 
     <style>
@@ -168,7 +168,7 @@
                                     Continuar
                                 </a>
                             @else
-                                <a href="{{ route('simulados.show', $simulado->id) }}?view=1" class="btn-secondary" style="display: block; text-align: center; padding: 10px; background: rgba(255,255,255,0.1); color: white; text-decoration: none; border-radius: 6px;">
+                                <a href="{{ route('simulados.show', $simulado->id) }}?view=1" class="btn-secondary" style="display: block; text-align: center; padding: 10px; background: var(--dash-border, rgba(255,255,255,0.1)); color: var(--dash-text-primary, white); text-decoration: none; border-radius: 6px;">
                                     Ver Resultado
                                 </a>
                             @endif

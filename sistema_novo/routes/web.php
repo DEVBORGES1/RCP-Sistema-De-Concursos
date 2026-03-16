@@ -76,9 +76,13 @@ Route::middleware('auth')->group(function () {
     
     // Rota de Ranking
     Route::get('/ranking', [\App\Http\Controllers\RankingController::class, 'index'])->name('ranking.index');
-});
 
-// DEBUG TEMPORÁRIO
+    // Rotas de Redações (Discursivas)
+    Route::get('/redacoes', [\App\Http\Controllers\RedacaoController::class, 'index'])->name('redacoes.index');
+    Route::get('/redacoes/{id}/escrever', [\App\Http\Controllers\RedacaoController::class, 'escrever'])->name('redacoes.escrever');
+    Route::post('/redacoes/{id}/submit', [\App\Http\Controllers\RedacaoController::class, 'submit'])->name('redacoes.submit');
+    Route::get('/redacoes/{id}/feedback', [\App\Http\Controllers\RedacaoController::class, 'feedback'])->name('redacoes.feedback');
+});
 Route::get('/debug-game-data', function () {
     try {
         $cats = \App\Models\CategoriaJogo::count();

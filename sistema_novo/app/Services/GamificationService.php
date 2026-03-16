@@ -113,7 +113,7 @@ class GamificationService
             ->where('mes_ano', $mesAno)
             ->orderBy('posicao')
             ->limit($limite)
-            ->get(['usuarios.nome', 'ranking_mensal.pontos_mes', 'ranking_mensal.posicao']);
+            ->get(['usuarios.nome', 'usuarios.foto_perfil', 'ranking_mensal.pontos_mes', 'ranking_mensal.posicao']);
     }
 
     public function obterPosicaoUsuario($usuarioId)

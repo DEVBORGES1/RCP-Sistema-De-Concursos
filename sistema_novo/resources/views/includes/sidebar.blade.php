@@ -91,13 +91,25 @@
                 <span>Banco de Questões</span>
             </a>
         </li>
+        <li class="menu-item">
+            <a href="{{ route('redacoes.index') }}" class="menu-link {{ request()->routeIs('redacoes.*') ? 'active' : '' }}">
+                <i class="fas fa-pen-nib menu-icon" style="color: #EC4899;"></i>
+                <span>Redações (IA)</span>
+            </a>
+        </li>
 
-        <!-- Multiplayer -->
-        <div class="menu-label">Multiplayer</div>
+        <!-- Pódio & Multiplayer -->
+        <div class="menu-label">Pódio & Multiplayer</div>
+        <li class="menu-item">
+            <a href="{{ route('ranking.index') }}" class="menu-link {{ request()->routeIs('ranking.*') ? 'active' : '' }}">
+                <i class="fas fa-trophy menu-icon" style="color: #F59E0B;"></i>
+                <span>Ranking Global</span>
+            </a>
+        </li>
         <li class="menu-item">
             <a href="{{ route('jogo.index') }}" class="menu-link {{ request()->routeIs('jogo.*') ? 'active' : '' }}">
-                <i class="fas fa-gamepad menu-icon"></i>
-                <span>Ranking e Multijogador</span>
+                <i class="fas fa-gamepad menu-icon" style="color: #8B5CF6;"></i>
+                <span>Arena Multijogador</span>
             </a>
         </li>
 
